@@ -13,6 +13,7 @@ export default function Login() {
   const signIn = async () => {
     try {
       await createUserWithEmailAndPassword(auth, email, password);
+      console.log(email, password);
     } catch (err) {
       console.error(err);
     }
@@ -26,7 +27,7 @@ export default function Login() {
           <div className=" flex flex-col py-4">
             <label htmlFor="">Username</label>
             <input
-              className="border"
+              className="border pl-2"
               type="email"
               onChange={(e) => setEmail(e.target.value)}
             />
@@ -34,7 +35,7 @@ export default function Login() {
           <div className=" flex flex-col py-4">
             <label htmlFor="">Password</label>
             <input
-              className="border"
+              className="border pl-2"
               type="password"
               onChange={(e) => setPassword(e.target.value)}
             />
@@ -42,7 +43,8 @@ export default function Login() {
           <div>
             <button
               onClick={signIn}
-              className="bg-green-400 font-semibold h-8 w-full">
+              className="bg-green-400 font-semibold h-8 w-full"
+            >
               Submit
             </button>
           </div>
