@@ -53,14 +53,15 @@ export default function SignUp() {
             <div>
               <button
                 type="submit"
-                className="bg-accent rounded text-secondary font-semibold h-8 w-full">
+                className="bg-accent rounded text-secondary font-semibold h-8 w-full"
+              >
                 Sign In
               </button>
             </div>
             {error && <div> {error}</div>}
           </form>
           <div className="text-center pt-8 mb-0">
-            <p className=" text-sm text-accent hover:underline font-semibold">
+            <p className=" text-sm pb-3 text-accent hover:underline font-semibold">
               <Link to="./SignIn">Create an account</Link>
             </p>
           </div>
