@@ -18,7 +18,7 @@ export default function Login() {
     } catch (error) {
       if (error.code === "auth/wrong-password") {
         console.log("there is error");
-        setError("incorrect password");
+        setError("incorrect password, try again");
       } else {
         console.log("wrong login");
         setError("Login error");
@@ -28,22 +28,24 @@ export default function Login() {
 
   return (
     <>
-      <div className="flex justify-center  items-center min-h-screen">
-        <section className="border-2 rounded-xl border-green-400 xs:w-[24rem]  p-8  ">
-          <h2 className="text-2xl text-center font-bold ">Sign Up</h2>
+      <div className="flex justify-center bg-primary items-center min-h-screen">
+        <section className="rounded-xl bg-secondary shadow-xl border-accent w-[20rem] sm:w-[24rem] h-[20rem]  p-8  ">
+          <h2 className="text-2xl text-center font-bold text-accent">
+            Sign Up
+          </h2>
           <form onSubmit={signIn}>
-            <div className=" flex flex-col py-4">
+            <div className=" flex text-accent font-medium flex-col py-4">
               <label htmlFor="">Username</label>
               <input
-                className="border pl-2"
+                className="rounded text-accent bg-primary pl-2"
                 type="email"
                 onChange={(e) => setEmail(e.target.value)}
               />
             </div>
-            <div className=" flex flex-col py-4">
+            <div className=" flex text-accent font-medium flex-col py-4">
               <label htmlFor="">Password</label>
               <input
-                className="border pl-2"
+                className="rounded text-accent bg-primary  pl-2"
                 type="password"
                 onChange={(e) => setPassword(e.target.value)}
               />
@@ -51,11 +53,13 @@ export default function Login() {
             <div>
               <button
                 type="submit"
-                className="bg-green-400 font-semibold h-8 w-full">
-                Submit
+                className="bg-accent rounded text-secondary font-semibold h-8 w-full">
+                Sign Up
               </button>
             </div>
-            {error && <div> {error}</div>}
+            <div className="text-accent text-center font-medium">
+              {error && <div> {error}</div>}
+            </div>
           </form>
         </section>
       </div>

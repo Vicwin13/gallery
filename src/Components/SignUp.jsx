@@ -28,22 +28,24 @@ export default function SignUp() {
 
   return (
     <>
-      <div className="flex justify-center  items-center min-h-screen">
-        <section className="border-2 rounded-xl border-green-400 xs:w-[24rem]  p-8  ">
-          <h2 className="text-2xl text-center font-bold ">Login In</h2>
+      <div className="flex justify-center bg-primary  items-center min-h-screen">
+        <section className="shadow-xl rounded-xl bg-secondary border-accent w-[20rem] sm:w-[24rem] h-[20rem] p-8  ">
+          <h2 className="text-2xl text-center font-bold text-accent">
+            Login In
+          </h2>
           <form onSubmit={signIn}>
-            <div className=" flex flex-col py-4">
+            <div className=" flex flex-col text-accent font-medium py-4">
               <label htmlFor="">Username</label>
               <input
-                className="border pl-2"
+                className=" rounded text-accent bg-primary border-accent pl-2"
                 type="email"
                 onChange={(e) => setEmail(e.target.value)}
               />
             </div>
-            <div className=" flex flex-col py-4">
+            <div className=" flex flex-col text-accent font-medium py-4">
               <label htmlFor="">Password</label>
               <input
-                className="border pl-2"
+                className=" rounded text-accent bg-primary border-accent pl-2"
                 type="password"
                 onChange={(e) => setPassword(e.target.value)}
               />
@@ -51,14 +53,14 @@ export default function SignUp() {
             <div>
               <button
                 type="submit"
-                className="bg-green-400 font-semibold h-8 w-full">
-                Submit
+                className="bg-accent rounded text-secondary font-semibold h-8 w-full">
+                Sign In
               </button>
             </div>
             {error && <div> {error}</div>}
           </form>
           <div className="text-center pt-8 mb-0">
-            <p className=" text-sm font-semibold">
+            <p className=" text-sm text-accent hover:underline font-semibold">
               <Link to="./SignIn">Create an account</Link>
             </p>
           </div>
